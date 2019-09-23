@@ -1,4 +1,4 @@
-// Auto Generated script. Use "Berry Panel > Item IDs" to edit it.
+// Auto Generated script. Use "Debug Panel > Item IDs" to edit it.
 public enum ItemID {
     coin = 0,
 	life = 1,

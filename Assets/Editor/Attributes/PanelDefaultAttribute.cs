@@ -4,5 +4,6 @@ namespace XCFramework.Editor
 {
     public class PanelDefaultAttribute : Attribute
     {
+        
     }
 }

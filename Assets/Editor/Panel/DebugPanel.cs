@@ -34,6 +34,9 @@ namespace XCFramework.Editor
         public Vector2 editorScroll;
         public Vector2 tabsScroll;
         
+        /// <summary>
+        /// 初始化样式
+        /// </summary>
         private void InitializeStyles()
         {
             DebugPanel.style_Exeption = new GUIStyle(GUI.skin.label);
@@ -84,7 +87,9 @@ namespace XCFramework.Editor
             DebugPanel.instance = this;
             CoreStyles.Initialize();
             this.titleContent.text = "DebugPanel";
+            //加载所有代码
             this.LoadEditors();
+            //选择一个meta做默认
             this.ShowFirstEditor();
             this.selectionColor = UnityEngine.Color.Lerp(UnityEngine.Color.red, UnityEngine.Color.white, 0.7f);
             this.bgColor = UnityEngine.Color.Lerp(GUI.backgroundColor, UnityEngine.Color.black, 0.3f);
