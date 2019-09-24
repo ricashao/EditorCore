@@ -7,3 +7,5 @@ EditorCore.sln
 README.md
 Logs
 .idea
+Library
+Assembly-CSharp-Editor.csproj

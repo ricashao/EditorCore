@@ -9,9 +9,24 @@ namespace XCFramework.Editor
         private string windowName;
         public TabAttribute(string windowName, string title, int priority = 0)
         {
+            this.windowName = windowName;
             this.title = title;
             this.priority = (float) priority;
-            this.windowName = windowName;
+        }
+        
+        public string Title
+        {
+            get { return this.title; }
+        }
+
+        public float Priority
+        {
+            get { return this.priority; }
+        }
+        
+        public string WindowName
+        {
+            get { return this.windowName; }
         }
     }
 }

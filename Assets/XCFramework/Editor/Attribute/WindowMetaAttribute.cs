@@ -9,7 +9,7 @@ namespace XCFramework.Editor
     {
         private string windowName;
 
-        WindowMetaAttribute(string windowName)
+        public WindowMetaAttribute(string windowName)
         {
             this.windowName = windowName;
         }
