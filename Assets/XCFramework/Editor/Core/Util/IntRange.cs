@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
-namespace XCFramework.Editor
+namespace KCFramework.Editor
 {
     [Serializable]
   public class IntRange : IEnumerable<int>, IEnumerable

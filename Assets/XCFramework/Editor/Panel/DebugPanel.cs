@@ -6,7 +6,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace XCFramework.Editor
+namespace KCFramework.Editor
 {
     [WindowMeta("DebegPanel")]
     public class DebugPanel : IPanel<DebugPanel>

@@ -6,7 +6,7 @@ using UnityEditor.Graphs;
 using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 
-namespace XCFramework.Editor
+namespace KCFramework.Editor
 {
     public static class GUIHelper
     {
@@ -449,6 +449,9 @@ namespace XCFramework.Editor
 
             private string _searchFilter = "";
             private List<GUIHelper.HierarchyList<I, F>.IInfo> drag = new List<GUIHelper.HierarchyList<I, F>.IInfo>();
+            /// <summary>
+            /// 根目录
+            /// </summary>
             protected GUIHelper.HierarchyList<I, F>.FolderInfo root;
             public List<I> itemCollection;
             public List<F> folderCollection;
@@ -1178,7 +1181,10 @@ namespace XCFramework.Editor
             public abstract void ContextMenu(
                 GenericMenu menu,
                 List<GUIHelper.HierarchyList<I, F>.IInfo> selected);
-
+            
+            /// <summary>
+            /// 文件
+            /// </summary>
             public class ItemInfo : GUIHelper.HierarchyList<I, F>.IInfo
             {
                 public I content;
@@ -1190,8 +1196,14 @@ namespace XCFramework.Editor
                 }
             }
 
+            /// <summary>
+            /// 文件夹
+            /// </summary>
             public class FolderInfo : GUIHelper.HierarchyList<I, F>.IInfo
             {
+                /// <summary>
+                /// 文件夹下的文件列表
+                /// </summary>
                 public List<GUIHelper.HierarchyList<I, F>.IInfo>
                     items = new List<GUIHelper.HierarchyList<I, F>.IInfo>();
 
@@ -1203,6 +1215,10 @@ namespace XCFramework.Editor
                     this.parent = parent;
                 }
 
+                /// <summary>
+                /// 深度遍历获取所有文件和文件夹
+                /// </summary>
+                /// <returns></returns>
                 public List<GUIHelper.HierarchyList<I, F>.IInfo> GetAllChild()
                 {
                     List<GUIHelper.HierarchyList<I, F>.IInfo> iinfoList =
@@ -1219,6 +1235,11 @@ namespace XCFramework.Editor
                     return iinfoList;
                 }
 
+                /// <summary>
+                /// 获取文件或文件夹
+                /// </summary>
+                /// <param name="id"></param>
+                /// <returns></returns>
                 public GUIHelper.HierarchyList<I, F>.IInfo Find(int id)
                 {
                     foreach (GUIHelper.HierarchyList<I, F>.IInfo iinfo1 in this.items)
@@ -1237,6 +1258,11 @@ namespace XCFramework.Editor
                     return (GUIHelper.HierarchyList<I, F>.IInfo) null;
                 }
 
+                /// <summary>
+                /// 文件夹是否是自己的父文件夹
+                /// </summary>
+                /// <param name="folder"></param>
+                /// <returns></returns>
                 public bool IsChildOf(GUIHelper.HierarchyList<I, F>.FolderInfo folder)
                 {
                     for (GUIHelper.HierarchyList<I, F>.FolderInfo parent = this.parent;
@@ -1250,15 +1276,26 @@ namespace XCFramework.Editor
                     return false;
                 }
 
+                /// <summary>
+                /// 文件夹是否是自己的子文件夹
+                /// </summary>
+                /// <param name="folder"></param>
+                /// <returns></returns>
                 public bool IsParentOf(GUIHelper.HierarchyList<I, F>.FolderInfo folder)
                 {
                     return folder.IsChildOf(this);
                 }
             }
 
+            /// <summary>
+            /// 文件抽象类
+            /// </summary>
             public abstract class IInfo
             {
                 public TreeViewItem item;
+                /// <summary>
+                /// 父文件夹
+                /// </summary>
                 public GUIHelper.HierarchyList<I, F>.FolderInfo parent;
 
                 public string path
@@ -1271,6 +1308,9 @@ namespace XCFramework.Editor
                     }
                 }
 
+                /// <summary>
+                /// 绝对路径
+                /// </summary>
                 public string fullPath
                 {
                     get
@@ -1284,11 +1324,17 @@ namespace XCFramework.Editor
                     }
                 }
 
+                /// <summary>
+                /// 文件名
+                /// </summary>
                 public string name
                 {
                     get { return this.item.displayName; }
                 }
 
+                /// <summary>
+                /// 在父文件夹中的索引
+                /// </summary>
                 public int index
                 {
                     get
@@ -1299,11 +1345,17 @@ namespace XCFramework.Editor
                     }
                 }
 
+                /// <summary>
+                /// 是否是文件
+                /// </summary>
                 public bool isItemKind
                 {
                     get { return this is GUIHelper.HierarchyList<I, F>.ItemInfo; }
                 }
 
+                /// <summary>
+                /// 是否是文件夹
+                /// </summary>
                 public bool isFolderKind
                 {
                     get { return this is GUIHelper.HierarchyList<I, F>.FolderInfo; }

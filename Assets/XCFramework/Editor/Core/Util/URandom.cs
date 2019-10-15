@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace XCFramework.Editor
+namespace KCFramework.Editor
 {
     public class URandom
   {

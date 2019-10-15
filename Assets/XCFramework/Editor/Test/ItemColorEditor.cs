@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
-namespace XCFramework.Editor
+namespace KCFramework.Editor
 {
     [Tab("DebegPanel","Item Colors", 0)]
     public class ItemColorEditor : MetaEditor

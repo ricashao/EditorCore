@@ -1,6 +1,6 @@
 using System;
 
-namespace XCFramework.Editor
+namespace KCFramework.Editor
 {
     public class DefaultTabAttribute : Attribute
     {

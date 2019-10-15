@@ -1,6 +1,6 @@
 using UnityEditor;
 
-namespace XCFramework.Editor
+namespace KCFramework.Editor
 {
     public class PrefVariable
     {

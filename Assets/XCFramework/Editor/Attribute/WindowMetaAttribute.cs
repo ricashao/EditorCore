@@ -1,6 +1,6 @@
 using System;
 
-namespace XCFramework.Editor
+namespace KCFramework.Editor
 {
     /// <summary>
     /// 管理window attribute

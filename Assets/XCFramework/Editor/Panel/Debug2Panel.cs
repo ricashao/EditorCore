@@ -1,6 +1,6 @@
 using UnityEditor;
 
-namespace XCFramework.Editor
+namespace KCFramework.Editor
 {
     [WindowMeta("Debeg2Panel")]
     public class Debug2Panel : IPanel<Debug2Panel>

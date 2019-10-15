@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace XCFramework.Editor
+namespace KCFramework.Editor
 {
     public abstract class MetaEditor : MetaEditor<MonoBehaviour>
     {

@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using UnityEditor;
 
-namespace XCFramework.Editor
+namespace KCFramework.Editor
 {
     public static class EUtils
   {

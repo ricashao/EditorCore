@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace XCFramework.Editor
+namespace KCFramework.Editor
 {
     /// <summary>
     /// meta抽象类

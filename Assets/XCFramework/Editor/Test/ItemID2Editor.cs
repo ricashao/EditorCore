@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
-namespace XCFramework.Editor
+namespace KCFramework.Editor
 {
     [Tab("Debeg2Panel","Item2IDs", 0)]
     public class Item2IDEditor : MetaEditor
